@@ -16,19 +16,31 @@ function queryAPI() {
     .then(promise => promise.json())
     .then(data => {
       let temperature = document.querySelector('.temperature');
-      temperature.innerHTML = `${data.main.temp} °C`;
+      temperature.innerHTML = `${data.main.temp.toFixed(1)} °C`;
+
+      let description = document.querySelector('.description');
+      description.innerHTML = data.weather[0].description;
 
       let weatherIcon = document.querySelector('.weather-icon');
       let iconCode = data.weather[0].icon;
       let iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
-      weatherIcon.src = iconURL;
-      weatherIcon.innerHTML = data.weather[0].description;
+      loadImage(iconURL, weatherIcon);
     });
 }
 
 function displayTemperature() {
   let displayTemp = document.querySelector('.display-temp');
   displayTemp.classList.remove('invisible');
+}
+
+function loadImage(source, screenImg) {
+  const img = new Image();
+
+  img.onload = function() {
+    screenImg.src = img.src;
+  };
+
+  img.src = source;
 }
 
 city.addEventListener('keyup', handleCityInput);

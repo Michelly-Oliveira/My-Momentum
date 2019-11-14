@@ -1,99 +1,107 @@
-body, html {
-    padding: 0;
-    margin: 0;
-    color: #e6e4e4;
-    font-size: 20px;
+body,
+html {
+  padding: 0;
+  margin: 0;
+  color: #e6e4e4;
+  font-size: 20px;
 }
 
 .container {
-    background-image: url('https://source.unsplash.com/1600x900/daily?dog');
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    flex-direction: column;
+  background-image: url('https://source.unsplash.com/1600x900/daily?dog');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #time {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    flex-direction: column;
-    padding: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem;
 }
 
 .time {
-    font-size: 7rem;
-    padding: .5rem;
+  font-size: 7rem;
+  padding: 0.5rem;
 }
 
 .greeting {
-    font-size: 5rem;
-    padding: .5rem;
+  font-size: 4rem;
+  padding: 0.5rem;
 }
 
 .date {
-    font-size: 1.2rem;
-    padding: .5rem;
-    position: absolute;
-    top: 5px;
-    color: #f4f4f4;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 5px;
+  color: #f4f4f4;
 }
 
 #weather {
-    width: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    flex-direction: column;
-    padding: 1.5rem;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
 }
 
 #city {
-    position: absolute;
-    top: 5px;
-    right: 20px;
-    width: 150px;
-    padding: .5rem;
-    border: 0;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #FFFFFF;
-    font-size: 16px;
-    text-align: end;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 150px;
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 5px;
+  background-color: transparent;
+  font-size: 16px;
+  text-align: end;
+  color: #ffffff;
+}
+
+#city::placeholder {
+  opacity: 0.4;
+  color: #ffffff;
 }
 
 #city:focus {
-    outline: none;
+  outline: none;
 }
 
 .display-temp {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: absolute;
-    top: 50px;
-    right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  font-size: 0.9rem;
 }
 
 .weather-icon {
-    width: 50px;
+  width: 50px;
 }
 
-.temperature {
-    font-size: 1.2rem;
+.description {
+  text-transform: capitalize;
 }
 
 .invisible {
-    visibility: hidden;
-    overflow: hidden;
+  visibility: hidden;
+  overflow: hidden;
 }
 
 @media (max-width: 700px) {
-    .greeting {
-        font-size: 3rem;
-    }
+  .greeting {
+    font-size: 3rem;
+  }
 }
