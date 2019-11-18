@@ -24,23 +24,13 @@ function queryAPI() {
       let weatherIcon = document.querySelector('.weather-icon');
       let iconCode = data.weather[0].icon;
       let iconURL = `http://openweathermap.org/img/w/${iconCode}.png`;
-      loadImage(iconURL, weatherIcon);
+      weatherIcon.src = iconURL;
     });
 }
 
 function displayTemperature() {
   let displayTemp = document.querySelector('.display-temp');
   displayTemp.classList.remove('invisible');
-}
-
-function loadImage(source, screenImg) {
-  const img = new Image();
-
-  img.onload = function() {
-    screenImg.src = img.src;
-  };
-
-  img.src = source;
 }
 
 city.addEventListener('keyup', handleCityInput);
